@@ -50,8 +50,6 @@ in
     intel-gpu-tools.enable = true;
   };
 
-  services.frigate.vaapiDriver = "i965"; #"iHD";
-
   # Network, hostname, user and timezone
   networking.networkmanager.enable = true;
 
@@ -170,7 +168,6 @@ in
     quickshell
     wl-clipboard
     vim
-    emacs
     gcc
     rustc
     cargo
