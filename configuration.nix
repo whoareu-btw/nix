@@ -38,10 +38,10 @@ in
   hardware = {
     graphics = {
       enable = true;
-      extraPackages = with pkgs; [
-        unstable.intel-vaapi-driver
-        intel-media-sdk
-      ];
+      #extraPackages = with pkgs; [
+      #  unstable.intel-vaapi-driver
+      #  intel-media-sdk
+      #];
     };
 
     intel-gpu-tools.enable = true;
@@ -124,9 +124,9 @@ in
     };
   };
 
-  environment.sessionVariables = {
-    LIBVA_DRIVER_NAME = "i965"; 
-  };
+  #environment.sessionVariables = {
+  #  LIBVA_DRIVER_NAME = "i965"; 
+  #};
 
   # All packages, including fonts and themes
   environment.systemPackages = with pkgs; [
@@ -191,13 +191,13 @@ in
     monocraft
   ];
 
-  nix.settings.experimental-features = [ "nix-command" "flakes"];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   nixpkgs.config = {
     allowUnfree = true;
-    permittedInsecurePackages = [
-      "intel-media-sdk-23.2.2"
-    ];
+    #permittedInsecurePackages = [
+    #  "intel-media-sdk-23.2.2"
+    #];
   };
 
   # GPG and firewall
