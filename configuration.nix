@@ -10,7 +10,7 @@ in
 {
   imports = [       
     ./hardware-configuration.nix
-    ./others/default.nix 
+    ./rikka/default.nix 
   ];
 
   # Bootloader, kernel, kernel parameters and kernel modules

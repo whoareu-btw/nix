@@ -25,7 +25,7 @@
         {
           home-manager = {
             useGlobalPkgs = true;
-            users.haru = import ./others/home.nix;
+            users.haru = import ./hanabi/home.nix;
             backupFileExtension = "backup";
           };
         }
