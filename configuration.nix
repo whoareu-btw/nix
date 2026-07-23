@@ -10,10 +10,7 @@ in
 {
   imports = [       
     ./hardware-configuration.nix
-    ./others/neovim.nix
-    ./others/suisway.nix
-    ./others/thunar.nix
-    ./others/console.nix
+    ./others/default.nix 
   ];
 
   # Bootloader, kernel, kernel parameters and kernel modules
