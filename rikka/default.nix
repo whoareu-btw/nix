@@ -1,10 +1,11 @@
-{ config, lib, pkgs, ... }:
+{ imports, ... }:
 
 {
   imports = [
-    ./console.nix
-    ./suisway.nix
-    ./neovim.nix
-    ./thunar.nix
+    ./net/default.nix
+    ./env/default.nix
+    ./dev/default.nix
+    ./zram/default.nix
+    ./graphic/default.nix
   ];
 }
