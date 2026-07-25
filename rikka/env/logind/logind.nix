@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ ... }:
 
 {
   services.logind.settings.Login = {

@@ -1,6 +1,6 @@
 # NIXOS CONFIGURATION
 
-{ config, lib, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   imports = [       

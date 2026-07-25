@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 let
   customWaylandScript = pkgs.writeShellScript "start-suisway" ''
