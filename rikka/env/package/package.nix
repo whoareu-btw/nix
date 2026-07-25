@@ -11,9 +11,6 @@
     networkmanagerapplet
     ristretto
     fuzzel
-    distrobox
-    qemu
-    dnsmasq
     libnotify
     mako
     nwg-look
@@ -25,10 +22,7 @@
     btop
     htop
     foot
-    zellij
-    tmux
     emote
     wl-clipboard
-    vim
   ];
 }

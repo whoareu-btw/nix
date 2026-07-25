@@ -14,6 +14,5 @@
     lua-language-server
     bash-language-server
     nil
-    git
   ];
 }
