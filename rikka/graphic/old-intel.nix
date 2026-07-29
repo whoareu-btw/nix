@@ -6,13 +6,20 @@ let
   };
 in
 {
+  boot.kernelParams = [
+    "i915.enable_dc=0"
+    "i915.enable_fbc=0"
+    "i915.reset=1"
+  ];
+
   hardware = {
     graphics = {
       enable = true;
-      #extraPackages = with pkgs; [
+      extraPackages = with pkgs; [
       #  unstable.intel-vaapi-driver
+      #  vaapi-intel-hybrid
       #  intel-media-sdk
-      #];
+      ];
     };
 
     intel-gpu-tools.enable = true;
@@ -28,7 +35,6 @@ in
   #};
   
   environment.systemPackages = with pkgs; [
-    efibootmgr
     libva
     libva-utils
     powertop

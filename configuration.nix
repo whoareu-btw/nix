@@ -30,6 +30,10 @@
 
   };
 
+  environment.systemPackages = with pkgs; [
+    efibootmgr
+  ];
+
   # Nix settings and Nix config
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
