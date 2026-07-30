@@ -4,6 +4,7 @@
   imports = [
     ./tty/default.nix
     ./sway/default.nix
+    ./xorg/default.nix
     ./font/default.nix
     ./user/default.nix
     ./shell/default.nix
