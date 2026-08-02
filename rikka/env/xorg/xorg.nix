@@ -9,10 +9,14 @@
     };
 
     desktopManager = {
-      mate.enable = true;
+      xfce.enable = true;
     };
 
-    videoDrivers = [ "modesetting" ];
+    videoDrivers = [ "intel" ];
+    deviceSection = [
+      Option "AccelMethod" "sna"
+      Option "DRI" "crocus"
+    ];
 
     excludePackages = with pkgs; [
       xterm
