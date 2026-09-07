@@ -13,6 +13,5 @@
     ./flatpak/default.nix
     ./polkit/default.nix
     ./package/default.nix
-    ./libinput/default.nix
   ];
 }

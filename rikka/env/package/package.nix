@@ -5,7 +5,6 @@
     swaybg
     swayidle
     swaylock
-    waybar
     i3status-rust
     pavucontrol
     networkmanagerapplet
@@ -17,10 +16,8 @@
     nwg-look
     grim
     slurp
-    wlogout
     autotiling
     fastfetch
-    ufetch
     btop
     htop
     foot
