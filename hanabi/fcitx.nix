@@ -27,8 +27,10 @@
 
           globalOptions = {
             Hotkey = {
-              ToggleInputMethod = "Control+Right Shift";
               EnumerateWithTriggerKeys = true;
+            };
+            "Hotkey/TriggerKeys" = {
+               "0" = "Control+Shift_R";
             };
           };
 

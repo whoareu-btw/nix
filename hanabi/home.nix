@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   imports = [
@@ -21,6 +21,10 @@
     name = "GoogleDot-Black";
   };
 
+  systemd.user.services.fcitx5-daemon = {
+    Install.WantedBy = lib.mkForce [];
+  };
+
   gtk = {
     enable = true;
     theme = {
@@ -30,7 +34,7 @@
 
     font = {
       name = "JetBrainsMono NF";
-      size = 10;
+      size = 14;
     };
 
     iconTheme = {
@@ -59,8 +63,8 @@
         style = "kvantum";
       };
       Fonts = {
-        fixed = "\"JetBrainsMono NF,10\"";
-        general = "\"JetBrainsMono NF,10\"";
+        fixed = "\"JetBrainsMono NF,14\"";
+        general = "\"JetBrainsMono NF,14\"";
       };
     };
     qt6ctSettings = {
@@ -70,8 +74,8 @@
         style = "kvantum";
       };
       Fonts = {
-        fixed = "\"JetBrainsMono NF,10\"";
-        general = "\"JetBrainsMono NF,10\"";
+        fixed = "\"JetBrainsMono NF,14\"";
+        general = "\"JetBrainsMono NF,14\"";
       };
     };
   };

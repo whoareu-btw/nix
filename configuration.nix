@@ -20,14 +20,7 @@
       efi.canTouchEfiVariables = true;
     };
 
-    kernelPackages = pkgs.linuxKernel.packages.linux_6_12;  #pkgs.linuxKernel.packages.linux_xanmod;
-
-    #kernelParams = [
-    #  "i915.enable_dc=0"
-    #  "i915.enable_fbc=0"
-    #  "i915.reset=1"
-    #];
-
+    kernelPackages = pkgs.linuxKernel.packages.linux_xanmod;
   };
 
   environment.systemPackages = with pkgs; [

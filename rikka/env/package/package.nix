@@ -6,11 +6,12 @@
     swayidle
     swaylock
     waybar
-    quickshell
+    i3status-rust
     pavucontrol
     networkmanagerapplet
     ristretto
     fuzzel
+    rofi
     libnotify
     mako
     nwg-look
@@ -19,10 +20,14 @@
     wlogout
     autotiling
     fastfetch
+    ufetch
     btop
     htop
     foot
     emote
     wl-clipboard
+    hwinfo
+    lshw
+    dmidecode
   ];
 }
