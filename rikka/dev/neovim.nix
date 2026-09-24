@@ -1,9 +1,13 @@
-{ config, lib, pkgs, ... }:
+{ pkgs, ... }:
 
 {
+  environment.systemPackages = with pkgs; [
+    ripgrep
+    fd
+  ];
+
   programs.neovim = {
     enable = true;
-    viAlias = true;
     configure = {
       customLuaRC = ''
         -- THEMES
@@ -28,10 +32,10 @@
         -- END OF THEMES
 
         -- TABBING
-        vim.opt.tabstop = 3
-        vim.opt.shiftwidth = 3
+        vim.opt.tabstop = 2
+        vim.opt.shiftwidth = 2
         vim.opt.expandtab = true
-        vim.opt.softtabstop = 3
+        vim.opt.softtabstop = 2
         vim.opt.smarttab = true
         vim.opt.autoindent = true
         vim.opt.smartindent = true
@@ -114,7 +118,6 @@
           'rust_analyzer', 
           'pyright', 
           'bashls', 
-          'nil_ls' 
         }
 
         for _, lsp in ipairs(default_servers) do
@@ -141,6 +144,47 @@
           }
         })
         vim.lsp.enable('lua_ls')
+
+        vim.lsp.config('nil_ls', {
+          capabilities = capabilities,
+          settings = {
+            ['nil'] = {
+              nix = {
+                flake = {
+                  autoArchive = false,
+                },
+              },
+            },
+          },
+        })
+        vim.lsp.enable('nil_ls')
+
+        -- Telescope 
+        local telescope = require('telescope')
+        telescope.setup({
+          defaults = {
+            file_ignore_patterns = {
+              "%.xlsx$", "%.docx",
+              "%.png$", "%.jpg$", "%.jpeg$", "%.gif$", "%.webp$", "%.svg$", "%.mp3$", "%.mp4$", "%.flac", "%.opus$", "%.mkv$",
+              "%.pdf$", "%.img$", "%.qcow2$", "%.iso$", "%.7z$", "%.zip$", "%.tar$", "%.tar%.gz$", "%.tar%.xz$", "%.tar%.zstd$",
+              "%.o$", "%.so$", "%.bin$", "%.elf$", "%.log$",
+              "^%.git/", "^node_modules/", "^%.cache/", "^target/", "^linux/", "^compile/"
+            },
+          },
+        })
+
+        local builtin = require('telescope.builtin')
+
+        vim.keymap.set('n', '<M-o>', builtin.find_files, { noremap = true, silent = true })
+        vim.keymap.set('n', '<M-g>', builtin.live_grep, { noremap = true, silent = true })
+
+        vim.api.nvim_create_autocmd("VimEnter", {
+          callback = function()
+            if vim.fn.argc() == 0 then
+              builtin.find_files()
+            end
+          end,
+        })
 
         -- END OF ACTIVATE PLUGINS
 
@@ -171,6 +215,8 @@
           nvim-cmp
           nvim-lspconfig
           luasnip
+          telescope-nvim
+          plenary-nvim
         ];
       };
     };
