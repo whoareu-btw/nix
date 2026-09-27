@@ -1,0 +1,7 @@
+{ ... }:
+
+{
+  imports = [
+    ./old-intel.nix
+  ];
+}
