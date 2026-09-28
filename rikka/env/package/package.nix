@@ -34,6 +34,7 @@ in
     foot
     emote
     wl-clipboard
+    wf-recorder
     hwinfo
     lshw
     dmidecode
