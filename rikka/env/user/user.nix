@@ -4,7 +4,7 @@
   networking.hostName = "tsuyu";
 
   users.users.haru = {
-    extraGroups = [ "wheel" "libvirtd" "video" "renderer" "networkmanager" ];
+    extraGroups = [ "wheel" "video" "networkmanager" ];
     isNormalUser = true;
   };
 
