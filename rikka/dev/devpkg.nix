@@ -6,7 +6,6 @@
     vim
     tmux
     zellij
-    qemu
     dnsmasq
     distrobox
   ];

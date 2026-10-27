@@ -14,8 +14,8 @@
   home.pointerCursor = {
     enable = true;
     size = 24;
-    x11.enable = true;
     sway.enable = true;
+    x11.enable = true;
     gtk.enable = true;
     package = pkgs.google-cursor;
     name = "GoogleDot-Black";
@@ -91,6 +91,7 @@
     (papirus-icon-theme.override { 
         color = "black";
     })
+    google-cursor
   ];
   
   xdg.configFile. "gtk-4.0/settings.ini" .text = ''
